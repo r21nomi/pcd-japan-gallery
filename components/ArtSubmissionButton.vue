@@ -1,7 +1,9 @@
 <template>
   <div class="artSubmissionButton">
-    <a :href="url" target="_blank">スケッチ・作品を投稿する</a>
-    <p class="caption">誰でも無料で投稿でき、こちらのサイトに掲載されます。</p>
+    <a href="javascript:void(0)" target="_blank"
+      >スケッチの募集は修了しました</a
+    >
+    <p class="caption">たくさんの投稿ありがとうございました。</p>
   </div>
 </template>
 
@@ -10,11 +12,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 @Component({
   components: {},
 })
-export default class ArtSubmissionButton extends Vue {
-  private get url(): string {
-    return `${process.env.SUBMIT_FORM_URL}`
-  }
-}
+export default class ArtSubmissionButton extends Vue {}
 </script>
 
 <style scoped lang="stylus">
@@ -27,11 +25,12 @@ export default class ArtSubmissionButton extends Vue {
   a
     display inline-block
     padding $padding_20 $padding_40
-    background-color $accent_color
+    background-color $gray_aaa
     color $white_fff
     font-size $font_size_16
     font-weight $font_weight_bold
     text-decoration none
+    pointer-events none
 
   .caption
     font-size $font_size_12
